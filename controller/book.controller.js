@@ -1,4 +1,4 @@
-const Book = require('../models/book.modelsy')
+const Book = require('../models/book.models')
 
 const postBook = async(req,res)=>{
 const data = req.body
