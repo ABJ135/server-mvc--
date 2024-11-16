@@ -5,8 +5,8 @@ const controller = require('../controller/book.controller')
 
 
 
-router.post('/book',controller.postBook)
+router.post('/create',controller.postBook)
 
-router.get('/book',controller.getBook)
+router.get('/show',controller.getBook)
 
 module.exports = router

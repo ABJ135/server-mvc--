@@ -14,6 +14,7 @@ mongoose.connect('mongodb://localhost:27017/library')
 
 app.use(express.json())
 app.use('/book',bookRouter)
+// app.use('/book',bookRouter)
 
 app.listen(port,()=>{
     console.log(`Server running on port ${port}`)
