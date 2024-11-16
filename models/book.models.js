@@ -3,7 +3,7 @@ const {Schema} = require('mongoose')
 
 const BookSchema = new Schema ({
     title:{type:String,required:true},
-    author:{type:String,requires:true},
+    author:{type:String,required:true},
     year:Number,
     genre: String,
     Summary:String

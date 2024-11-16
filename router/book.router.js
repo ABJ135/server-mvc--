@@ -9,4 +9,6 @@ router.post('/create',controller.postBook)
 
 router.get('/show',controller.getBook)
 
+router.get('/id/:id',controller.getById)
+
 module.exports = router

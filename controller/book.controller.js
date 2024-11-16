@@ -11,7 +11,14 @@ const getBook = async (req,res)=>{
     res.json(object)
 }
 
+const getById = async (req,res)=>{
+    const id = req.params.id
+    const object = await Book.findById(id)
+    res.json(object)
+}
+
 module.exports = {
     postBook,
-    getBook
+    getBook,
+    getById
 }
