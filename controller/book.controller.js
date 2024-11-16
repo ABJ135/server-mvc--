@@ -11,6 +11,12 @@ const getBook = async (req,res)=>{
     res.json(object)
 }
 
+const search = async (req,res)=>{
+    const author = req.query.author
+    const object = await Book.findOne({author:author})
+    res.json(object)
+}
+
 const getById = async (req,res)=>{
     const id = req.params.id
     const object = await Book.findById(id)
@@ -20,5 +26,6 @@ const getById = async (req,res)=>{
 module.exports = {
     postBook,
     getBook,
-    getById
+    getById,
+    search
 }
