@@ -23,6 +23,11 @@ const getById = async (req,res)=>{
     res.json(object)
 }
 
+const deletee = async (req,res)=>{
+    const id = req.params.id
+    const object = await Book.deleteOne({id})
+}
+
 module.exports = {
     postBook,
     getBook,
