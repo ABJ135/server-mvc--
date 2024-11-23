@@ -6,7 +6,7 @@ const userSchema = new Schema ({
     bookId:{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Book',
-        require:false
+        required:false
     },
     name:{type:String,required:true},
     email:{type:String,required:true,unique:true},
