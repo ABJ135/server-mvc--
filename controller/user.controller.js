@@ -12,17 +12,21 @@ res.json(object)
 }
 
 const getUserById = async(req,res)=>{
-    const id = req.params.id
-
-    const object = await user.findById(id)
-    res.json(object)
+    try{
+        const id = req.params.id        
+        const object = await user.findById(id).populate('bookId')
+        res.json(object)
+    }catch(error){
+        console.log(error)
+        res.send("Error finding user")
+    }
 }
 
 const updateUser = async(req,res)=>{
     const id = req.params.id
     const data = req.body
     const object =await user.findByIdAndUpdate(id,data)
-    
+
     res.json(object)
 }
 
