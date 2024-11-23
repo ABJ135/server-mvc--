@@ -7,7 +7,7 @@ const userSchema = new Schema ({
     password:{type:String,required:true},
     age:Number,
     role:{type:String,required:true},
-    createdAt:{type:Date,default:Date.now}
+    createdAt:{type:Date,default:Date.now()}
 })
 
 const user = mongoose.model('user',userSchema)
