@@ -1,19 +1,40 @@
 const user = require('../models/user.models')
 
-const addUser = async(req,res)=>{
+const createUser = async(req,res)=>{
     const data = req.body
     const object = await user.create(data)
     res.json({"message":"Object created Successfully",object})
 }
 
-const getUser = async(req,res)=>{
+const getAllUsers = async(req,res)=>{
 const object = await user.find({})
 res.json(object)
 }
 
-const userById = async(req,res)=>{
+const getUserById = async(req,res)=>{
     const id = req.params.id
 
     const object = await user.findById(id)
     res.json(object)
+}
+
+const updateUser = async(req,res)=>{
+    const id = req.params.id
+    const data = req.body
+    const object =await user.findByIdAndUpdate(id,data)
+    
+    res.json(object)
+}
+
+const deleteUser = async (req,res)=>{
+    const id = req.params.id
+    await user.deleteOne(id);
+}
+
+module.exports  = {
+    createUser,
+    getAllUsers,
+    getUserById,
+    updateUser,
+    deleteUser
 }
