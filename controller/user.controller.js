@@ -12,5 +12,8 @@ res.json(object)
 }
 
 const userById = async(req,res)=>{
-    
+    const id = req.params.id
+
+    const object = await user.findById(id)
+    res.json(object)
 }
