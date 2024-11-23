@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 //Require route
 const bookRouter = require('./router/book.router')
+const userRouter = require('./router/user.router')
 
 //require mongoose
 const mongoose = require('mongoose')
@@ -14,7 +15,8 @@ mongoose.connect('mongodb://localhost:27017/library')
 
 app.use(express.json())
 app.use('/book',bookRouter)
-// app.use('/book',bookRouter)
+app.use('/user',userRouter)
+
 
 app.listen(port,()=>{
     console.log(`Server running on port ${port}`)
