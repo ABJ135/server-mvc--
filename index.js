@@ -2,6 +2,8 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const dotenv = require('dotenv').config()
+
 //Require route
 const bookRouter = require('./router/book.router')
 const userRouter = require('./router/user.router')
@@ -9,7 +11,7 @@ const userRouter = require('./router/user.router')
 //require mongoose
 const mongoose = require('mongoose')
 //connect to db
-mongoose.connect('mongodb://localhost:27017/library')
+mongoose.connect(process.env.Mongo_URL)
 .then(()=>console.log("mongodb connected"))
 .catch((err)=>console.error(err))
 
